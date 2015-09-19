@@ -11,6 +11,9 @@ use neTpyceB\TMCms\Modules\Entity;
  * @method setEmail(string $email)
  * @method setTs(int $ts)
  * @method setIp(string $ip)
+ * @method string getEmail()
+ * @method bool getActive()
+ *
  */
 class EmailSubscriberEntity extends Entity
 {
