@@ -19,6 +19,7 @@ defined('INC') or exit;
  */
 class CmsEmailSubscribers
 {
+
     public function _default()
     {
         $breadcrumbs = BreadCrumbs::getInstance()
