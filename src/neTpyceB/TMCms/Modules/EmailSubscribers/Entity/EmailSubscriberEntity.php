@@ -1,6 +1,6 @@
 <?php
 
-namespace neTpyceB\TMCms\Modules\EmailSubscribers;
+namespace neTpyceB\TMCms\Modules\EmailSubscribers\Entity;
 
 use neTpyceB\TMCms\Modules\Entity;
 
