@@ -2,7 +2,7 @@
 
 namespace neTpyceB\TMCms\Modules\EmailSubscribers\Entity;
 
-use neTpyceB\TMCms\Modules\EntityRepository;
+use neTpyceB\TMCms\Orm\EntityRepository;
 
 /**
  * Class EmailSubscriberEntityRepository

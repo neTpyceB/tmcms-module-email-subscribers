@@ -2,7 +2,7 @@
 
 namespace neTpyceB\TMCms\Modules\EmailSubscribers\Entity;
 
-use neTpyceB\TMCms\Modules\Entity;
+use neTpyceB\TMCms\Orm\Entity;
 
 /**
  * Class EmailSubscriberEntity
@@ -11,6 +11,7 @@ use neTpyceB\TMCms\Modules\Entity;
  * @method setEmail(string $email)
  * @method setTs(int $ts)
  * @method setIp(string $ip)
+ * @method setReceiveNews(bool $flag)
  * @method string getEmail()
  * @method bool getActive()
  *
