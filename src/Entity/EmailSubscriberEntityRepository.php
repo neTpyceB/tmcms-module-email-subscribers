@@ -1,12 +1,12 @@
 <?php
 
-namespace neTpyceB\TMCms\Modules\EmailSubscribers\Entity;
+namespace TMCms\AdminTMCms\Modules\EmailSubscribers\Entity;
 
-use neTpyceB\TMCms\Orm\EntityRepository;
+use TMCms\AdminTMCms\Orm\EntityRepository;
 
 /**
  * Class EmailSubscriberEntityRepository
- * @package neTpyceB\TMCms\Modules\EmailSubscribers
+ * @package TMCms\AdminTMCms\Modules\EmailSubscribers
  */
 class EmailSubscriberEntityRepository extends EntityRepository
 {

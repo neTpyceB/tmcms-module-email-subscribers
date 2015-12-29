@@ -1,17 +1,17 @@
 <?php
 
-namespace neTpyceB\TMCms\Modules\EmailSubscribers;
+namespace TMCms\AdminTMCms\Modules\EmailSubscribers;
 
-use neTpyceB\TMCms\Modules\EmailSubscribers\Entity\EmailSubscriberEntity;
-use neTpyceB\TMCms\Modules\IModule;
-use neTpyceB\TMCms\Strings\Verify;
-use neTpyceB\TMCms\Traits\singletonInstanceTrait;
+use TMCms\AdminTMCms\Modules\EmailSubscribers\Entity\EmailSubscriberEntity;
+use TMCms\AdminTMCms\Modules\IModule;
+use TMCms\AdminTMCms\Strings\Verify;
+use TMCms\AdminTMCms\Traits\singletonInstanceTrait;
 
 defined('INC') or exit;
 
 /**
  * Class ModuleEmailSubscribers
- * @package neTpyceB\TMCms\Modules\EmailSubscribers
+ * @package TMCms\AdminTMCms\Modules\EmailSubscribers
  */
 class ModuleEmailSubscribers implements IModule
 {

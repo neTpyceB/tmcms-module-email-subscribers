@@ -1,25 +1,25 @@
 <?php
 
-namespace neTpyceB\TMCms\Modules\EmailSubscribers;
+namespace TMCms\AdminTMCms\Modules\EmailSubscribers;
 
-use neTpyceB\TMCms\Admin\Messages;
-use neTpyceB\TMCms\HTML\BreadCrumbs;
-use neTpyceB\TMCms\HTML\Cms\CmsFormHelper;
-use neTpyceB\TMCms\HTML\Cms\CmsTable;
-use neTpyceB\TMCms\HTML\Cms\Column\ColumnActive;
-use neTpyceB\TMCms\HTML\Cms\Column\ColumnData;
-use neTpyceB\TMCms\HTML\Cms\Column\ColumnDelete;
-use neTpyceB\TMCms\HTML\Cms\Column\ColumnEdit;
-use neTpyceB\TMCms\Log\App;
-use neTpyceB\TMCms\Modules\EmailSubscribers\Entity\EmailSubscriberEntity;
-use neTpyceB\TMCms\Modules\EmailSubscribers\Entity\EmailSubscriberEntityRepository;
-use neTpyceB\TMCms\Strings\Converter;
+use TMCms\AdminTMCms\Admin\Messages;
+use TMCms\AdminTMCms\HTML\BreadCrumbs;
+use TMCms\AdminTMCms\HTML\Cms\CmsFormHelper;
+use TMCms\AdminTMCms\HTML\Cms\CmsTable;
+use TMCms\AdminTMCms\HTML\Cms\Column\ColumnActive;
+use TMCms\AdminTMCms\HTML\Cms\Column\ColumnData;
+use TMCms\AdminTMCms\HTML\Cms\Column\ColumnDelete;
+use TMCms\AdminTMCms\HTML\Cms\Column\ColumnEdit;
+use TMCms\AdminTMCms\Log\App;
+use TMCms\AdminTMCms\Modules\EmailSubscribers\Entity\EmailSubscriberEntity;
+use TMCms\AdminTMCms\Modules\EmailSubscribers\Entity\EmailSubscriberEntityRepository;
+use TMCms\AdminTMCms\Strings\Converter;
 
 defined('INC') or exit;
 
 /**
  * Class CmsEmailSubscribers
- * @package neTpyceB\TMCms\Modules\EmailSubscribers
+ * @package TMCms\AdminTMCms\Modules\EmailSubscribers
  */
 class CmsEmailSubscribers
 {
