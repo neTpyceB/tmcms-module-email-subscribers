@@ -1,12 +1,12 @@
 <?php
 
-namespace TMCms\AdminTMCms\Modules\EmailSubscribers\Entity;
+namespace TMCms\Modules\EmailSubscribers\Entity;
 
-use TMCms\AdminTMCms\Orm\Entity;
+use TMCms\Orm\Entity;
 
 /**
  * Class EmailSubscriberEntity
- * @package TMCms\AdminTMCms\Modules\EmailSubscribers
+ * @package TMCms\Modules\EmailSubscribers
  *
  * @method setEmail(string $email)
  * @method setTs(int $ts)

@@ -1,17 +1,17 @@
 <?php
 
-namespace TMCms\AdminTMCms\Modules\EmailSubscribers;
+namespace TMCms\Modules\EmailSubscribers;
 
-use TMCms\AdminTMCms\Modules\EmailSubscribers\Entity\EmailSubscriberEntity;
-use TMCms\AdminTMCms\Modules\IModule;
-use TMCms\AdminTMCms\Strings\Verify;
-use TMCms\AdminTMCms\Traits\singletonInstanceTrait;
+use TMCms\Modules\EmailSubscribers\Entity\EmailSubscriberEntity;
+use TMCms\Modules\IModule;
+use TMCms\Strings\Verify;
+use TMCms\Traits\singletonInstanceTrait;
 
 defined('INC') or exit;
 
 /**
  * Class ModuleEmailSubscribers
- * @package TMCms\AdminTMCms\Modules\EmailSubscribers
+ * @package TMCms\Modules\EmailSubscribers
  */
 class ModuleEmailSubscribers implements IModule
 {

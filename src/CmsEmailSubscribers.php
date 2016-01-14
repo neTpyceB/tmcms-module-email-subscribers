@@ -1,25 +1,25 @@
 <?php
 
-namespace TMCms\AdminTMCms\Modules\EmailSubscribers;
+namespace TMCms\Modules\EmailSubscribers;
 
-use TMCms\AdminTMCms\Admin\Messages;
-use TMCms\AdminTMCms\HTML\BreadCrumbs;
-use TMCms\AdminTMCms\HTML\Cms\CmsFormHelper;
-use TMCms\AdminTMCms\HTML\Cms\CmsTable;
-use TMCms\AdminTMCms\HTML\Cms\Column\ColumnActive;
-use TMCms\AdminTMCms\HTML\Cms\Column\ColumnData;
-use TMCms\AdminTMCms\HTML\Cms\Column\ColumnDelete;
-use TMCms\AdminTMCms\HTML\Cms\Column\ColumnEdit;
-use TMCms\AdminTMCms\Log\App;
-use TMCms\AdminTMCms\Modules\EmailSubscribers\Entity\EmailSubscriberEntity;
-use TMCms\AdminTMCms\Modules\EmailSubscribers\Entity\EmailSubscriberEntityRepository;
-use TMCms\AdminTMCms\Strings\Converter;
+use TMCms\Admin\Messages;
+use TMCms\HTML\BreadCrumbs;
+use TMCms\HTML\Cms\CmsFormHelper;
+use TMCms\HTML\Cms\CmsTable;
+use TMCms\HTML\Cms\Column\ColumnActive;
+use TMCms\HTML\Cms\Column\ColumnData;
+use TMCms\HTML\Cms\Column\ColumnDelete;
+use TMCms\HTML\Cms\Column\ColumnEdit;
+use TMCms\Log\App;
+use TMCms\Modules\EmailSubscribers\Entity\EmailSubscriberEntity;
+use TMCms\Modules\EmailSubscribers\Entity\EmailSubscriberEntityRepository;
+use TMCms\Strings\Converter;
 
 defined('INC') or exit;
 
 /**
  * Class CmsEmailSubscribers
- * @package TMCms\AdminTMCms\Modules\EmailSubscribers
+ * @package TMCms\Modules\EmailSubscribers
  */
 class CmsEmailSubscribers
 {
