@@ -15,28 +15,27 @@ class EmailSubscriberEntityRepository extends EntityRepository
         'fields' => [
             'ip' => [
                 'type' => 'varchar',
-                'unsigned' => true,
-                'length' => '15',
+                'length' => 15
             ],
             'ts' => [
-                'type' => 'varchar',
-                'unsigned' => true,
+                'type' => 'int',
+                'unsigned' => true
             ],
             'user_id' => [
-                'type' => 'index',
+                'type' => 'index'
             ],
             'email' => [
-                'type' => 'varchar',
-            ],
-            'notes' => [
-                'type' => 'varchar',
+                'type' => 'varchar'
             ],
             'receive_news' => [
-                'type' => 'bool',
+                'type' => 'bool'
             ],
             'receive_ads' => [
-                'type' => 'bool',
+                'type' => 'bool'
             ],
-        ],
+            'notes' => [
+                'type' => 'varchar'
+            ]
+        ]
     ];
 }
