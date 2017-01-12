@@ -1,15 +1,15 @@
 {
-  "name": "neTpyceB/TMCms-module-email-subscribers",
+  "name": "devp-eu/tmcms-module-email-subscribers",
   "type": "library",
   "description": "Module Email Subscribers for TMCms",
   "keywords": ["cms", "email", "subscribers"],
-  "homepage": "http://devp.lv/",
+  "homepage": "http://devp.eu/",
   "license": "proprietary",
   "authors": [
     {
       "name": "Vadims Petrusevs",
-      "email": "info@devp.lv",
-      "homepage": "http://devp.lv/",
+      "email": "info@devp.eu",
+      "homepage": "http://devp.eu/",
       "role": "Developer"
     }
   ],
