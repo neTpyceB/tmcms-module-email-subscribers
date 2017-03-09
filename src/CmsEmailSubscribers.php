@@ -26,7 +26,7 @@ class CmsEmailSubscribers
 
     public function _default()
     {
-        $breadcrumbs = BreadCrumbs::getInstance()
+        BreadCrumbs::getInstance()
             ->addCrumb(Converter::symb2Ttl(P))
             ->addCrumb('All')
         ;
@@ -47,7 +47,7 @@ class CmsEmailSubscribers
             ->addColumn(ColumnEdit::getInstance('edit')
                 ->href('?p=' . P . '&do=edit&id={%id%}')
                 ->width('1%')
-                ->value('Edit')
+                ->setValue('Edit')
             )
             ->addColumn(ColumnActive::getInstance('active')
                 ->href('?p=' . P . '&do=_active&id={%id%}')
@@ -59,8 +59,23 @@ class CmsEmailSubscribers
             )
         ;
 
-        echo $breadcrumbs;
         echo $table;
+    }
+
+    public function edit()
+    {
+        $id = abs((int)$_GET['id']);
+        if (!$id) return;
+
+        $subscriber = new EmailSubscriberEntity($id);;
+
+        BreadCrumbs::getInstance()
+            ->addCrumb(Converter::symb2Ttl(P), '?p=' . P)
+            ->addCrumb('Edit Email Subscriber')
+            ->addCrumb($subscriber->getEmail());
+
+        echo self::__subscribers_form($subscriber)
+            ->setAction('?p=' . P . '&do=_edit&id=' . $id);
     }
 
     public function __subscribers_form($data = NULL)
@@ -90,24 +105,6 @@ class CmsEmailSubscribers
         return CmsFormHelper::outputForm(ModuleEmailSubscribers::$tables['subscribers'],
             $form_array
         );
-    }
-
-    public function edit()
-    {
-        $id = abs((int)$_GET['id']);
-        if (!$id) return;
-
-        $subscriber = new EmailSubscriberEntity($id);;
-
-        echo BreadCrumbs::getInstance()
-            ->addCrumb(Converter::symb2Ttl(P), '?p='. P)
-            ->addCrumb('Edit Email Subscriber')
-            ->addCrumb($subscriber->getEmail())
-        ;
-
-        echo self::__subscribers_form($subscriber)
-            ->setAction('?p='. P .'&do=_edit&id='. $id)
-        ;
     }
 
     public function _edit()
