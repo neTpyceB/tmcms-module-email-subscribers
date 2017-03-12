@@ -18,8 +18,6 @@ use TMCms\Orm\Entity;
  */
 class EmailSubscriberEntity extends Entity
 {
-    protected $db_table = 'm_email_subscribers';
-
     /**
      * @return $this
      */

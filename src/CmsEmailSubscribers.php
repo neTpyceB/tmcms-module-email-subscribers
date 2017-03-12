@@ -32,6 +32,7 @@ class CmsEmailSubscribers
         ;
 
         $data = new EmailSubscriberEntityRepository;
+        $data->addOrderByField('ts', true);
 
         $table = CmsTable::getInstance()
             ->addData($data)
@@ -44,15 +45,21 @@ class CmsEmailSubscribers
                 ->dataType('ts2date')
                 ->enableOrderableColumn()
             )
+            ->addColumn(ColumnData::getInstance('notes'))
+            ->addColumn(ColumnActive::getInstance('receive_news')
+                ->href('?p=' . P . '&do=_receive_news&id={%id%}')
+                ->enableOrderableColumn()
+                ->ajax(true)
+            )
+            ->addColumn(ColumnActive::getInstance('receive_ads')
+                ->href('?p=' . P . '&do=_receive_ads&id={%id%}')
+                ->enableOrderableColumn()
+                ->ajax(true)
+            )
             ->addColumn(ColumnEdit::getInstance('edit')
                 ->href('?p=' . P . '&do=edit&id={%id%}')
                 ->width('1%')
                 ->setValue('Edit')
-            )
-            ->addColumn(ColumnActive::getInstance('active')
-                ->href('?p=' . P . '&do=_active&id={%id%}')
-                ->enableOrderableColumn()
-                ->ajax(true)
             )
             ->addColumn(ColumnDelete::getInstance('delete')
                 ->href('?p=' . P . '&do=_delete&id={%id%}')
@@ -89,16 +96,13 @@ class CmsEmailSubscribers
                     'name' => 'Date',
                     'type' => 'datetime'
                 ],
-                'receive_news' => [
-                    'type' => 'checkbox'
-                ],
-                'receive_ads' => [
-                    'type' => 'checkbox'
-                ]
+                'email' => [],
             ],
             'unset' => [
                 'id',
-                'user_id'
+                'client_id',
+                'receive_news',
+                'receive_ads',
             ]
         ];
 
@@ -120,24 +124,40 @@ class CmsEmailSubscribers
         $subscriber->save();
 
         App::add('Email Subscriber with email  "' . $subscriber->getEmail() . '" updated');
-
-        Messages::sendMessage('Subscriber updated');
+        Messages::sendGreenAlert('Subscriber updated');
 
         go('?p='. P .'&highlight='. $subscriber->getId());
     }
 
-    public function _active()
+    public function _receive_news()
     {
         $id = abs((int)$_GET['id']);
         if (!$id) return;
 
         $subscriber = new EmailSubscriberEntity($id);
-        $subscriber->flipBoolValue('active');
+        $subscriber->flipBoolValue('receive_news');
         $subscriber->save();
 
-        App::add('Email Subscriber with email  "' . $subscriber->getEmail() . '" '. ($subscriber->getActive() ? '' : 'de') .'activated');
+        App::add('Subscriber with email  "' . $subscriber->getEmail() . '" updated');
+        Messages::sendGreenAlert('Subscriber updated');
 
-        Messages::sendMessage('Subscriber '. ($subscriber->getActive() ? '' : 'de') .'activated');
+        if (IS_AJAX_REQUEST) {
+            die('1');
+        }
+        back();
+    }
+
+    public function _receive_ads()
+    {
+        $id = abs((int)$_GET['id']);
+        if (!$id) return;
+
+        $subscriber = new EmailSubscriberEntity($id);
+        $subscriber->flipBoolValue('receive_ads');
+        $subscriber->save();
+
+        App::add('Subscriber with email  "' . $subscriber->getEmail() . '" updated');
+        Messages::sendGreenAlert('Subscriber updated');
 
         if (IS_AJAX_REQUEST) {
             die('1');

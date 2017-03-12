@@ -10,7 +10,6 @@ use TMCms\Orm\EntityRepository;
  */
 class EmailSubscriberEntityRepository extends EntityRepository
 {
-    protected $db_table = 'm_email_subscribers';
     protected $table_structure = [
         'fields' => [
             'ip' => [
@@ -21,7 +20,7 @@ class EmailSubscriberEntityRepository extends EntityRepository
                 'type' => 'int',
                 'unsigned' => true
             ],
-            'user_id' => [
+            'client_id' => [
                 'type' => 'index'
             ],
             'email' => [
