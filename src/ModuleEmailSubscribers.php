@@ -36,6 +36,7 @@ class ModuleEmailSubscribers implements IModule
         // Set supplied email
         $subscriber = new EmailSubscriberEntity;
         $subscriber->setEmail($email);
+        $subscriber->findAndLoadPossibleDuplicateEntityByFields(['email']);
 
         // Set any supplied data
         if ($additional_data) {

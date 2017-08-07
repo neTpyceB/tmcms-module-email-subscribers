@@ -27,7 +27,7 @@ class CmsEmailSubscribers
     public function _default()
     {
         BreadCrumbs::getInstance()
-            ->addCrumb(Converter::symb2Ttl(P))
+            ->addCrumb(Converter::charsToNormalTitle(P))
             ->addCrumb('All')
         ;
 
@@ -77,7 +77,7 @@ class CmsEmailSubscribers
         $subscriber = new EmailSubscriberEntity($id);;
 
         BreadCrumbs::getInstance()
-            ->addCrumb(Converter::symb2Ttl(P), '?p=' . P)
+            ->addCrumb(Converter::charsToNormalTitle(P), '?p=' . P)
             ->addCrumb('Edit Email Subscriber')
             ->addCrumb($subscriber->getEmail());
 
