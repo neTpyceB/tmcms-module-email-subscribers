@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace TMCms\Modules\EmailSubscribers;
 
@@ -17,16 +18,13 @@ class ModuleEmailSubscribers implements IModule
 {
     use singletonInstanceTrait;
 
-    public static $tables = [
-        'subscribers' => 'm_email_subscribers'
-    ];
-
     /**
-     * @param $email
-     * @param array $additional_data
+     * @param string $email
+     * @param array  $additional_data
+     *
      * @return bool
      */
-    public static function addNewEmailSubscriber($email, array $additional_data = [])
+    public static function addNewEmailSubscriber(string $email, array $additional_data = []): bool
     {
         // Check email
         if (!Verify::email($email)) {
