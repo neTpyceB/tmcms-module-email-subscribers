@@ -41,7 +41,7 @@ class CmsEmailSubscribers
                 ->enableOrderableColumn()
             )
             ->addColumn(ColumnData::getInstance('ts')
-                ->title('Date')
+                ->setTitle('Date')
                 ->dataType('ts2date')
                 ->enableOrderableColumn()
             )
