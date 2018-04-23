@@ -106,7 +106,7 @@ class CmsEmailSubscribers
             ]
         ];
 
-        return CmsFormHelper::outputForm(ModuleEmailSubscribers::$tables['subscribers'],
+        return CmsFormHelper::outputForm(EmailSubscriberEntity::getInstance()->getDbTableName(),
             $form_array
         );
     }
